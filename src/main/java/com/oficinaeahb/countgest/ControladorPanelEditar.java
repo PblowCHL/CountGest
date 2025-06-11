@@ -34,7 +34,7 @@ public class ControladorPanelEditar {
     
     @FXML private BorderPane PanelEditar;
 
-    // ----- DATOS PRINCIPALES -----
+    // ----- DATOS PRINCIPALE -----
     @FXML private TextField Razon_SocialED;
     @FXML private JFXComboBox<String> TipoEDP;
     @FXML private TextField RutED;
