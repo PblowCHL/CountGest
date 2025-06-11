@@ -1,0 +1,10 @@
+/* Clase para un layout con bordes sutiles y sombra ligera */
+.bordered-layout {
+    -fx-border-color: #DDDDDD;          /* Color del borde más claro */
+    -fx-border-width: 1px;              /* Borde más fino */
+    -fx-border-radius: 8px;             /* Bordes redondeados */
+    -fx-background-radius: 8px;         /* Fondo con bordes redondeados */
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 6, 0.3, 1, 1); /* Sombra más sutil */
+    -fx-padding: 8;                     /* Espacio interior opcional */
+}

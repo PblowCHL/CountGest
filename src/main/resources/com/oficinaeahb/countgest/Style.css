@@ -1,0 +1,16 @@
+/* Estado normal - fondo transparente, sin bordes */
+.transparent-button {
+   -fx-background-color: transparent;  /* Fondo transparente */
+   -fx-border-color: transparent;      /* Sin borde */
+   -fx-text-fill: white;               /* Color del texto, ajusta según tu diseño */
+}
+
+/* Estado hover - color al pasar el puntero */
+.transparent-button:hover {
+   -fx-background-color: rgba(70, 130, 180, 0.3); /* Color semi-transparente al pasar el puntero */
+}
+
+/* Estado pressed - color al hacer clic */
+.transparent-button:pressed {
+   -fx-background-color: rgba(70, 130, 180, 0.5); /* Color semi-transparente al hacer clic */
+}

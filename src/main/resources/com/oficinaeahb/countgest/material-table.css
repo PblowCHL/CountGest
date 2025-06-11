@@ -1,0 +1,93 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 16-12-2024, 3:06:37 p. m.
+    Author     : Contabilidad
+*/
+
+/* Estilo general del JFXTreeTableView */
+.table-view, .jfx-tree-table-view {
+    -fx-background-color: #ffffff; /* Fondo de tabla (celdas) */
+    -fx-border-color: transparent; /* Sin borde visible */
+    -fx-table-cell-border-color: transparent; /* Sin líneas internas */
+    -fx-effect: dropshadow(gaussian, rgb(204, 204, 204), 4, 0, 0, 2);
+}
+
+/* Cabecera de las columnas */
+.column-header, .jfx-tree-table-view .column-header {
+    -fx-background-color: #3700B3; /* Color de encabezado */
+    -fx-border-color: #2c0191; /* Borde del encabezado */
+}
+
+.column-header .label {
+    -fx-text-fill: #ffffff; /* Texto blanco en encabezado */
+    -fx-font-weight: bold;
+}
+
+/* Celdas de la tabla */
+.table-cell, .jfx-tree-table-view .tree-table-cell {
+    -fx-text-fill: #000000; /* Texto negro en las celdas */
+}
+
+.tree-table-row-cell:hover {
+    -fx-background-color: #dbe8ff !important;
+    -fx-text-fill: #000000 !important;
+}
+
+/*ocupar todo el ancho*/
+.column-header-background {
+    -fx-background-color: #3700B3; /* Color del encabezado */
+    -fx-border-color: #2c0191; /* Borde */
+}
+
+.column-header .label {
+    -fx-alignment: center; /* Centrar el texto */
+    -fx-padding: 10px 0; /* Relleno vertical */
+}
+
+/*fin de encabezado*/
+
+
+/* Barra de desplazamiento */
+.jfx-tree-table-view .scroll-bar {
+    -fx-background-color: transparent; 
+    -fx-padding: 0;
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 12px;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #9E9E9E; /* Gris claro */
+    -fx-background-radius: 6px;
+    -fx-opacity: 0.7;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #616161; /* Gris oscuro */
+    -fx-opacity: 1;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+}
+
+/* Filas pares e impares */
+.tree-table-row-cell:odd {
+    -fx-background-color: #FFFFFF;
+}
+
+.tree-table-row-cell:even {
+    -fx-background-color: #fcfcfc; /* Gris claro */
+}
+
+/* Separadores entre filas */
+.tree-table-row-cell {
+    -fx-border-color: #9E9E9E;
+    -fx-border-width: 0 0 1 0;
+}
+

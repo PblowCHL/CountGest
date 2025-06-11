@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Elementos JFoenix comentados temporalmente -->
+<!--█-->
+
+<BorderPane fx:id="PanelEditar" prefHeight="800.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oficinaeahb.countgest.ControladorPanelEditar">
+
+    <center>
+        <VBox spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+                <ScrollPane fitToWidth="true">
+                    <content>
+                        <VBox spacing="10.0">
+                            <children>
+                                <!-- DATOS PRINCIPALES -->
+                                <TitledPane expanded="false" text="DATOS PRINCIPALES">
+                                    <content>
+                                        <VBox spacing="10.0">
+                                            <children>
+                                                <HBox spacing="10.0">
+                                                    <TextField fx:id="Razon_SocialED" promptText="Razón social" HBox.hgrow="ALWAYS" />
+                                                    <!--█-->
+                                                    <JFXComboBox fx:id="TipoEDP" prefWidth="150.0" promptText="Tipo" HBox.hgrow="ALWAYS" />
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                    <TextField fx:id="RutED" promptText="Rut de empresa" HBox.hgrow="ALWAYS" />
+                                                    <TextField fx:id="Clave_SIIED" promptText="Clave SII" HBox.hgrow="ALWAYS" />
+                                                    <TextField fx:id="HonorariosED" promptText="Honorarios Oficina" HBox.hgrow="ALWAYS" />
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                    <TextField fx:id="ApodoED" promptText="Apodo" HBox.hgrow="ALWAYS" />
+                                                    <TextField fx:id="ContactoED" promptText="Contacto" HBox.hgrow="ALWAYS" />
+                                                    <!--█-->
+                                                    <JFXComboBox fx:id="Tipo_ContabilidadED" prefWidth="180.0" promptText="Tipo de contabilidad" HBox.hgrow="ALWAYS" />
+                                                    <TextField fx:id="Inicio_ContabilidadED" promptText="Fecha de inicio contabilidad" HBox.hgrow="ALWAYS" />
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+
+                                <!-- DIRECCIONES -->
+                                <TitledPane text="DIRECCIONES">
+                                    <content>
+                                        <VBox spacing="10.0">
+                                            <children>
+                                    <VBox fx:id="vbDireccionesED" prefHeight="0.0" prefWidth="836.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                                      <HBox spacing="10.0">
+                                                          <!--█-->
+                                                          <JFXComboBox fx:id="TIPO_DIRECCIONED" prefHeight="25.0" prefWidth="124.0" promptText="Tipo" />
+                                                         <TextField fx:id="DIRECCIONED" prefHeight="25.0" prefWidth="200.0" promptText="Calle" />
+                                                         <TextField fx:id="NUMED" prefHeight="25.0" prefWidth="83.0" promptText="Número" />
+                                                         <TextField fx:id="LOCALED" prefHeight="25.0" prefWidth="75.0" promptText="N° Local" />
+                                                         <!--█-->
+                                                         <JFXComboBox fx:id="COMUNAED" prefWidth="150.0" promptText="Comuna" />
+                                             <JFXButton fx:id="btnEliminarDireccionED" ripplerFill="RED" style="-fx-background-color: #DC001A;" text="Eliminar" textFill="WHITE">
+                                                <graphic>
+                                                   <ImageView>
+                                                      <image>
+                                                         <Image url="@images/ELIMINAReditar.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                </graphic>
+                                                <cursor>
+                                                   <Cursor fx:constant="HAND" />
+                                                </cursor></JFXButton>
+                                                      </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="0.0" prefWidth="843.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                                      <!--█-->
+                                                      <JFXButton fx:id="btnAGDirecciones" alignment="CENTER" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: #4233FF;" text="Agregar" textAlignment="CENTER" textFill="WHITE">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <graphic>
+                                                <ImageView fitHeight="27.0" fitWidth="26.0">
+                                                   <image>
+                                                      <Image url="@images/AgregarDireccion.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></JFXButton>
+                                       </children>
+                                    </VBox>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+
+                                <!-- REPRESENTANTES Y SOCIOS -->
+                                <TitledPane expanded="false" text="REPRESENTANTES Y SOCIOS">
+                                    <content>
+                                        <VBox spacing="10.0">
+                                            <children>
+                                    <VBox fx:id="vbSociosED" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                                      <HBox spacing="10.0">
+                                                          <!--█-->
+                                                          <JFXComboBox fx:id="TIPOED" prefWidth="150.0" promptText="Tipo" />
+                                                          <!--█-->
+                                                          <JFXButton text="Eliminar" />
+                                                      </HBox>
+                                                      <TextField fx:id="NOMBREED" promptText="Nombre" />
+                                                      <TextField fx:id="RUTED" promptText="Rut" />
+                                                      <TextField fx:id="CLAVE_SIIED" promptText="Clave SII" />
+                                                      <TextField fx:id="PARTICIPACIONED" promptText="Participacion" />
+                                                      <TextField fx:id="CONTACTOED" promptText="Contacto" />
+                                                      <TextField fx:id="CORREOED" promptText="Correo" />
+                                                      <TextField fx:id="CLAVE_UNICAED" promptText="Clave única" />
+                                          <Separator prefWidth="200.0" />
+                                                      <TextField fx:id="RBANCOED" promptText="Banco" />
+                                                      <!--█-->
+                                                      <JFXComboBox fx:id="RTIPO_CUENTAED" prefWidth="150.0" promptText="Tipo de cuenta" />
+                                                      <TextField fx:id="RN_DE_CUENTAED" promptText="Número de cuenta" />
+                                       </children>
+                                    </VBox>
+                                    <HBox alignment="CENTER" prefHeight="0.0" prefWidth="843.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                                      <!--█-->
+                                                      <JFXButton fx:id="btnAGRepSoc" text="Agregar" />
+                                       </children>
+                                    </HBox>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+
+                                <!-- PAGOS ELECTRONICOS -->
+                                <TitledPane expanded="false" text="PAGOS ELECTRONICOS">
+                                    <content>
+                                        <VBox spacing="10.0">
+                                            <children>
+                                    <VBox fx:id="vbPosED" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                                      <HBox spacing="10.0">
+                                                          <!--█-->
+                                                          <JFXComboBox fx:id="Serv_PosED" prefWidth="150.0" promptText="Servicio" />
+                                                          <!--█-->
+                                                          <JFXButton text="Eliminar" />
+                                                      </HBox>
+                                                      <TextField fx:id="USUARIOED" promptText="Usuario" />
+                                                      <TextField fx:id="CLAVEED" promptText="Clave" />
+                                                      <TextField fx:id="ObservacionED" promptText="Observacion" />
+                                       </children>
+                                    </VBox>
+                                    <HBox alignment="CENTER" prefHeight="4.0" prefWidth="856.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                                      <!--█-->
+                                                      <JFXButton fx:id="btnAGPos" text="Agregar" />
+                                       </children>
+                                    </HBox>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+
+                                <!-- CLAVES PREVIRED Y FACTURACION -->
+                                <TitledPane expanded="false" text="CLAVES PREVIRED Y FACTURACION">
+                                    <content>
+                                        <VBox spacing="10.0">
+                                            <children>
+                                                <TextField fx:id="Usuario_previredED" promptText="Usuario Prev" />
+                                                <TextField fx:id="Clave_PreviredED" promptText="Clave Prev" />
+                                                <Separator />
+                                                <TextField fx:id="Clave_facturacionED" promptText="Clave Facturacion" />
+                                                <TextField fx:id="Fecha_CompraED" promptText="Fecha de compra" />
+                                                <TextField fx:id="DuracionED" promptText="Duracion" />
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+                        <TitledPane expanded="false" text="BANCO EMPRESA">
+                           <content>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="Banco_EmpresaED" promptText="Banco" />
+                                    <TextField fx:id="Num_CuentaED" promptText="N° de cuenta" />
+                                    <TextField fx:id="Tipo_CuentaED" promptText="Tipo de cuenta" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+<!--█-->
+                <JFXButton fx:id="btnGuardarED" text="Guardar" />
+<!--█-->
+                <JFXButton fx:id="btnCancelarED" text="Cancelar" />
+            </children>
+        </HBox>
+    </bottom>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>

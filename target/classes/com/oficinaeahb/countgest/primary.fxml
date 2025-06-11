@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!--█-->
+<?import com.jfoenix.controls.JFXTextField?>
+<!--█-->
+
+<StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oficinaeahb.countgest.ControladorPrincipal">
+   <children>
+      <BorderPane fx:id="clDashboard" prefHeight="900.0" prefWidth="1476.0" style="-fx-background-color: #DFE4F0;" visible="false">
+         <center>
+            <StackPane prefHeight="200.0" prefWidth="200.0" stylesheets="@Fondo.css" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="887.0" prefWidth="1476.0">
+                     <children>
+                        <HBox prefHeight="186.0" prefWidth="636.0" style="-fx-background-color: #002984;">
+                           <children>
+                              <Label text="ID:" textFill="WHITE" />
+                              <Label fx:id="ID_ClientePerfil" text="IDcliente" textFill="WHITE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/Person.png" />
+                                 </image>
+                              </ImageView>
+                              <HBox HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox prefHeight="150.0" prefWidth="481.0" spacing="5.0">
+                                       <children>
+                                          <Label fx:id="tipo_contabilidad" alignment="CENTER" style="-fx-background-color: #005fa4;" text="Tipo de contabilidad" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                                             <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label fx:id="nombre_empresa" text="Razon social" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="apodo" text="apodo" textFill="WHITE" wrapText="true" />
+                                          <Label fx:id="rut" text="Rut empresa" textFill="WHITE" wrapText="true" />
+                                          <Label fx:id="direccion" text="Direccion" textFill="WHITE" wrapText="true" />
+                                          <Label fx:id="contacto_empresa" text="Contacto empresa" textFill="WHITE" wrapText="true" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="10.0" />
+                                       </padding>
+                                    </VBox>
+                                    <JFXButton fx:id="btnEditar" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" prefHeight="241.0" prefWidth="152.0" ripplerFill="BLACK" style="-fx-background-color: #00277E;" text="EDITAR" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true" HBox.hgrow="ALWAYS">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@images/EDITAR.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="ArdourMono" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btnEtiquetas" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" prefHeight="241.0" prefWidth="152.0" ripplerFill="BLACK" style="-fx-background-color: #00277E;" text="ETIQUETAS" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" visible="false" wrapText="true">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <font>
+                                          <Font name="ArdourMono" size="12.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView>
+                                             <image>
+                                                <Image url="@images/ETIQUETA.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <VBox alignment="TOP_RIGHT" prefHeight="156.0" prefWidth="307.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label fx:id="honorarios" alignment="TOP_LEFT" contentDisplay="RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="18.0" prefWidth="182.0" text="Honorarios" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0">
+                                                   <image>
+                                                      <Image url="@images/Pagos.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></Label>
+                                          <Label fx:id="inicio_contabilidad" alignment="TOP_RIGHT" contentDisplay="RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="18.0" prefWidth="182.0" text="Inicio contabilidad" textFill="WHITE" />
+                                          <VBox alignment="BOTTOM_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                <JFXButton fx:id="btn_inhabilitar_cliente" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #FFC100;" text="INHABILITAR CLIENTE">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </JFXButton>
+                                                <JFXButton fx:id="btn_eliminar_cliente" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #C92729;" text="ELIMINAR CLIENTE">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </JFXButton>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </HBox>
+                        <HBox prefHeight="28.0" prefWidth="636.0" styleClass="bordered-layout" stylesheets="@bordered-layout.css">
+                           <children>
+                              <Label text="Etiquetas:" />
+                           </children>
+                           <padding>
+                              <Insets left="15.0" />
+                           </padding>
+                        </HBox>
+                        <Separator prefHeight="45.0" prefWidth="1476.0" visible="false" />
+                        <GridPane hgap="10.0" prefHeight="673.0" prefWidth="1476.0" vgap="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="462.4000244140625" minWidth="10.0" prefWidth="456.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="375.199951171875" minWidth="10.0" prefWidth="304.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="375.199951171875" minWidth="10.0" prefWidth="304.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="375.199951171875" minWidth="10.0" prefWidth="304.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="447.6" minHeight="10.0" prefHeight="259.79999389648435" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="269.4" minHeight="0.0" prefHeight="231.0000061035156" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <BorderPane fx:id="bpClaves" prefHeight="200.0" prefWidth="440.0" style="-fx-background-color: #0D47A1;" styleClass="bordered-layout" stylesheets="@bordered-layout.css">
+                                 <top>
+                                    <HBox prefHeight="24.0" prefWidth="446.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <JFXComboBox fx:id="grupoComboBox" prefHeight="25.0" prefWidth="137.0" unFocusColor="WHITE">
+                                             <HBox.margin>
+                                                <Insets right="60.0" />
+                                             </HBox.margin>
+                                          </JFXComboBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                 </top>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <bottom>
+                                    <HBox fx:id="circleContainerClaves" alignment="CENTER" prefHeight="27.0" prefWidth="448.0" spacing="5.0" BorderPane.alignment="CENTER" />
+                                 </bottom>
+                                 <center>
+                                    <VBox fx:id="Claves_Principales" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Pane fx:id="pTituloClave" prefHeight="59.0" prefWidth="445.0" style="-fx-background-color: #002A46;">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="445.0" spacing="20.0">
+                                                   <children>
+                                                      <HBox prefHeight="57.0" prefWidth="65.0">
+                                                         <children>
+                                                            <ImageView fitHeight="57.0" fitWidth="56.0">
+                                                               <image>
+                                                                  <Image url="@images/KEy.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </HBox>
+                                                      <Label fx:id="cl_servicio" alignment="CENTER" prefHeight="43.0" prefWidth="261.0" text="Label" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Franklin Gothic Medium Cond" size="37.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                   <cursor>
+                                                      <Cursor fx:constant="DEFAULT" />
+                                                   </cursor>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </VBox.margin>
+                                          </Pane>
+                                          <Label prefHeight="18.0" prefWidth="434.0" text="Usuario" textFill="WHITE">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </VBox.margin></Label>
+                                          <HBox prefHeight="31.0" prefWidth="445.0">
+                                             <children>
+                                                <TextField fx:id="cl_usuario" editable="false" prefHeight="25.0" prefWidth="392.0" />
+                                                <JFXButton fx:id="Cop_Usuario" text=" ">
+                                                   <graphic>
+                                                      <ImageView fitHeight="17.0" fitWidth="17.0">
+                                                         <image>
+                                                            <Image url="@images/Copy.png" />
+                                                         </image>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </JFXButton>
+                                             </children>
+                                          </HBox>
+                                          <Label prefHeight="18.0" prefWidth="434.0" text="Contraseña" textFill="WHITE">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </VBox.margin></Label>
+                                          <HBox prefHeight="28.0" prefWidth="445.0">
+                                             <children>
+                                                <TextField fx:id="cl_contrasena" editable="false" prefHeight="25.0" prefWidth="392.0" />
+                                                <JFXButton fx:id="Cop_Clave" text=" ">
+                                                   <graphic>
+                                                      <ImageView fitHeight="18.0" fitWidth="19.0">
+                                                         <image>
+                                                            <Image url="@images/Copy.png" />
+                                                         </image>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </JFXButton>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </center>
+                              </BorderPane>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #00626b50;" styleClass="bordered-layout" stylesheets="@bordered-layout.css" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                 <center>
+                                    <TableView fx:id="direcciones" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="colID" prefWidth="42.40000802278519" text="ID" visible="false" />
+                                        <TableColumn fx:id="colTipo_Direccion" prefWidth="114.4000015258789" text="Tipo de Direccion" />
+                                          <TableColumn fx:id="colCalle" prefWidth="373.6000061035156" text="Calle" />
+                                          <TableColumn fx:id="colNum" prefWidth="49.5999755859375" text="N°" />
+                                          <TableColumn fx:id="colLocal" prefWidth="65.60003662109375" text="Local" />
+                                          <TableColumn fx:id="colComuna" prefWidth="183.2000610351563" text="Comuna" />
+                                      </columns>
+                                    </TableView>
+                                 </center>
+                                 <top>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="396.0" text="Direcciones" textFill="WHITE" BorderPane.alignment="CENTER" />
+                                 </top>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </BorderPane>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fde08990;" styleClass="bordered-layout" stylesheets="@bordered-layout.css" GridPane.columnIndex="1">
+                                 <center>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Pane prefHeight="84.0" prefWidth="303.0" style="-fx-background-color: #ffc107;">
+                                             <children>
+                                                <ImageView fitHeight="76.0" fitWidth="80.0" layoutX="28.0" layoutY="2.0">
+                                                   <image>
+                                                      <Image url="@images/Banco.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label layoutX="114.0" layoutY="27.0" text="Banco de empresa" textFill="WHITE" textOverrun="CLIP">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <TextField fx:id="banco_empresa_renta" editable="false" promptText="Banco de empresa">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin></TextField>
+                                          <TextField fx:id="num_cuenta_renta" editable="false" promptText="Numero de cuenta" />
+                                          <TextField fx:id="tipo_cuenta_renta" editable="false" promptText="Tipo de cuenta" />
+                                       </children>
+                                    </VBox>
+                                 </center>
+                              </BorderPane>
+                              <BorderPane prefHeight="200.0" prefWidth="321.0" style="-fx-background-color: #00626b70;" styleClass="bordered-layout" stylesheets="@bordered-layout.css" GridPane.columnIndex="2" GridPane.rowSpan="2">
+                                 <center>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <center>
+                                          <VBox fx:id="registroContainer" prefHeight="468.0" prefWidth="303.0" spacing="10.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Pane prefHeight="51.0" prefWidth="273.0" style="-fx-background-color: #00626b;">
+                                                   <children>
+                                                      <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="14.0" layoutY="3.0">
+                                                         <image>
+                                                            <Image url="@images/Socios.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label layoutX="78.0" layoutY="13.0" prefHeight="25.0" prefWidth="181.0" text="Representantes y socio" textFill="WHITE" textOverrun="CLIP">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Pane>
+                                                <Label fx:id="rep_Tipo" alignment="CENTER" prefHeight="18.0" prefWidth="361.0" text="TIPO" textFill="WHITE" VBox.vgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Copperplate Gothic Bold" size="16.0" />
+                                                   </font></Label>
+                                                <Label fx:id="rep_participacion" alignment="CENTER" prefHeight="18.0" prefWidth="361.0" text="Participacion" textFill="WHITE" VBox.vgrow="ALWAYS">
+                                                   <font>
+                                                      <Font name="Arial Black" size="12.0" />
+                                                   </font></Label>
+                                                <TextField fx:id="rep_nombre" editable="false" promptText="NOMBRE" />
+                                                <TextField fx:id="rep_correo" editable="false" promptText="Correo" />
+                                                <TextField fx:id="rep_contacto" editable="false" promptText="Contacto" />
+                                                <HBox prefHeight="33.0" prefWidth="273.0">
+                                                   <children>
+                                                      <TextField fx:id="rep_rut" editable="false" prefHeight="25.0" prefWidth="253.0" promptText="RUT" HBox.hgrow="ALWAYS" />
+                                                      <JFXButton fx:id="Cop_Rut" text=" ">
+                                                         <graphic>
+                                                            <ImageView fitHeight="17.0" fitWidth="17.0">
+                                                               <image>
+                                                                  <Image url="@images/Copy.png" />
+                                                               </image>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </JFXButton>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="29.0" prefWidth="273.0">
+                                                   <children>
+                                                      <TextField fx:id="rep_claveSii" editable="false" prefWidth="253.0" promptText="CLAVE SII" HBox.hgrow="ALWAYS" />
+                                                      <JFXButton fx:id="Cop_ClaveSII" text=" ">
+                                                         <graphic>
+                                                            <ImageView fitHeight="17.0" fitWidth="17.0">
+                                                               <image>
+                                                                  <Image url="@images/Copy.png" />
+                                                               </image>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </JFXButton>
+                                                   </children>
+                                                </HBox>
+                                                <Separator prefHeight="22.0" prefWidth="358.0" />
+                                                <HBox prefHeight="33.0" prefWidth="273.0">
+                                                   <children>
+                                                      <TextField fx:id="rep_claveUnica" editable="false" prefHeight="25.0" prefWidth="285.0" promptText="Clave unica" HBox.hgrow="ALWAYS" />
+                                                      <JFXButton fx:id="Cop_ClaveUnica" text=" ">
+                                                         <graphic>
+                                                            <ImageView fitHeight="17.0" fitWidth="17.0">
+                                                               <image>
+                                                                  <Image url="@images/Copy.png" />
+                                                               </image>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </JFXButton>
+                                                   </children>
+                                                </HBox>
+                                                <Separator prefHeight="22.0" prefWidth="358.0" />
+                                                <Pane prefHeight="55.0" prefWidth="273.0" style="-fx-background-color: #00626b;">
+                                                   <children>
+                                                      <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="27.0" layoutY="13.0">
+                                                         <image>
+                                                            <Image url="@images/Banco.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label layoutX="80.0" layoutY="15.0" prefHeight="25.0" prefWidth="113.0" text="Banco de socio" textFill="WHITE" textOverrun="CLIP">
+                                                         <font>
+                                                            <Font name="System Bold" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </Pane>
+                                                <TextField fx:id="rep_banco" editable="false" promptText="Banco" />
+                                                <TextField fx:id="rep_tipoCuenta" editable="false" promptText="Tipo de cuenta" />
+                                                <TextField fx:id="rep_numcuenta" editable="false" promptText="Numero de cuenta" />
+                                             </children>
+                                             <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                             </padding>
+                                          </VBox>
+                                       </center>
+                                       <bottom>
+                                          <HBox fx:id="circleContainer" alignment="CENTER" prefHeight="18.0" prefWidth="303.0" spacing="10.0" BorderPane.alignment="CENTER" />
+                                       </bottom>
+                                    </BorderPane>
+                                 </center>
+                              </BorderPane>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #52525290;" styleClass="bordered-layout" stylesheets="@bordered-layout.css" GridPane.columnIndex="3" GridPane.rowSpan="2">
+                                 <center>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/Claves_Pos/logo_prontus_blanco.png" />
+                                             </image></ImageView>
+                                          <TextField fx:id="clave_fact" editable="false" promptText="Clave Facturacion">
+                                             <VBox.margin>
+                                                <Insets top="50.0" />
+                                             </VBox.margin></TextField>
+                                          <TextField fx:id="fecha_comp" editable="false" promptText="Fecha de compra" />
+                                          <TextField fx:id="duracion" editable="false" promptText="Duracion" />
+                                       </children>
+                                    </VBox>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </center>
+         <top>
+            <HBox prefHeight="33.0" prefWidth="1476.0" style="-fx-background-color: #011e5e;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="btnVolver" onAction="#volverFormulario" ripplerFill="BLACK" text=" " textFill="WHITE">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="21.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@images/VOLVER.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+      <BorderPane fx:id="FormCliente" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane nodeOrientation="RIGHT_TO_LEFT" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: f6f8fd;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="132.0" prefWidth="231.0" spacing="10.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <JFXButton fx:id="btnGuardar_formulario" prefHeight="51.0" prefWidth="173.0" style="-fx-background-color: #009587;" text="Guardar" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <JFXButton fx:id="btnLimpiar_formulario" prefHeight="51.0" prefWidth="173.0" style="-fx-background-color: #00BBD3;" text="Limpiar" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </children></Pane>
+                  <BorderPane prefHeight="900.0" prefWidth="825.0" style="-fx-background-color: ffffff;" styleClass="bordered-layout" stylesheets="@bordered-layout.css">
+                     <center>
+                        <VBox prefHeight="900.0" prefWidth="807.0" spacing="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ScrollPane prefHeight="778.0" prefWidth="767.0">
+                                 <content>
+                                    <VBox fx:id="Form_cliente" prefHeight="600.0" prefWidth="751.0" spacing="7.0">
+                                       <children>
+                                          <Label contentDisplay="RIGHT" prefHeight="26.0" prefWidth="239.0" style="-fx-background-color: #E9E9E9;" text="Datos Principales" textFill="#004394f7" VBox.vgrow="ALWAYS">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Separator prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </Separator>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                <HBox prefHeight="0.0" prefWidth="882.0" spacing="10.0">
+                                                   <children>
+                                                      <TextField fx:id="txtRazon_social" promptText="Razón Social" HBox.hgrow="ALWAYS" />
+                                                      <JFXComboBox fx:id="txtTipo_empresa" prefHeight="25.0" prefWidth="149.0" promptText="Tipo" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="0.0" prefWidth="882.0" spacing="10.0">
+                                                   <children>
+                                                      <TextField fx:id="txtApodo_empresa" prefWidth="193.0" promptText="Apodo" />
+                                                      <TextField fx:id="txtRut_empresa" prefWidth="193.0" promptText="Rut de empresa" HBox.hgrow="ALWAYS" />
+                                                      <TextField fx:id="txtClave_sii" prefHeight="25.0" prefWidth="210.0" promptText="Clave SII" />
+                                                      <TextField fx:id="txtContacto" prefHeight="25.0" prefWidth="214.0" promptText="Contacto" />
+                                                   </children>
+                                                </HBox>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                                   <children>
+                                                      <JFXComboBox fx:id="txtTipo_contabilidad" prefHeight="25.0" prefWidth="531.0" promptText="Tipo de contabilidad" HBox.hgrow="ALWAYS" />
+                                                      <TextField fx:id="txtHonorarios" prefHeight="25.0" prefWidth="116.0" promptText="Honorarios Oficina" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <Label prefWidth="239.0" style="-fx-background-color: #E9E9E9;" text="Direcciones" textFill="#004394f7">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Separator prefWidth="737.0">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </Separator>
+                                          <VBox fx:id="vbDirecciones" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                <HBox fx:id="hbDirecciones" prefHeight="8.0" prefWidth="882.0" spacing="10.0">
+                                                   <children>
+                                                      <JFXComboBox fx:id="txtTipo_direccion_cliente" prefHeight="25.0" prefWidth="149.0" promptText="Tipo" />
+                                                      <TextField fx:id="txtCalle" prefHeight="25.0" prefWidth="330.0" promptText="Calle" HBox.hgrow="ALWAYS" />
+                                                      <TextField fx:id="txtNumero_calle" prefHeight="25.0" prefWidth="69.0" promptText="Numero" />
+                                                      <TextField fx:id="txtNumero_local" prefHeight="25.0" prefWidth="71.0" promptText="N° Local" />
+                                                      <JFXComboBox fx:id="txtComuna_cliente" prefHeight="25.0" prefWidth="149.0" promptText="Comuna" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <HBox alignment="CENTER" prefHeight="12.0" prefWidth="751.0" spacing="10.0">
+                                             <children>
+                                                <JFXButton fx:id="btnAgregar_direccion" alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: #FEC006;" text="Agregar" textFill="WHITE" textOverrun="CLIP">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </JFXButton>
+                                                <JFXButton fx:id="btnEliminar_direccion" alignment="CENTER" contentDisplay="CENTER" disable="true" style="-fx-background-color: #e85656;" text="Eliminar" textFill="WHITE" textOverrun="CLIP">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor></JFXButton>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Label prefHeight="26.0" prefWidth="239.0" style="-fx-background-color: #E9E9E9;" text="socios" textFill="#004394f7">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Separator prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </Separator>
+                                          <VBox fx:id="vbSocios" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                <HBox fx:id="hbSocios1" prefHeight="17.0" prefWidth="767.0" spacing="10.0">
+                                                   <children>
+                                                      <JFXComboBox fx:id="txtTipo_socio" prefHeight="25.0" prefWidth="102.0" promptText="Tipo" />
+                                                      <TextField fx:id="txtNombre_socio" promptText="Nombre" HBox.hgrow="ALWAYS" />
+                                                      <TextField fx:id="txtRut_socio" promptText="Rut" />
+                                                      <TextField fx:id="txtClave_sii_socio" promptText="Clave SII" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox fx:id="hbSocios2" prefHeight="17.0" prefWidth="767.0" spacing="10.0">
+                                                   <children>
+                                                      <TextField fx:id="txtParticipacion_socio" prefHeight="25.0" prefWidth="88.0" promptText="Participacion" />
+                                                      <TextField fx:id="txtContacto_socio" prefHeight="25.0" prefWidth="196.0" promptText="Contacto" HBox.hgrow="ALWAYS" />
+                                                      <TextField fx:id="txtCorreo_socio" prefHeight="25.0" prefWidth="262.0" promptText="Correo" />
+                                                      <TextField fx:id="txtClave_unica_socio" prefHeight="25.0" prefWidth="154.0" promptText="Clave única" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox fx:id="hbSocios3" prefHeight="17.0" prefWidth="767.0" spacing="10.0">
+                                                   <children>
+                                                      <TextField fx:id="txtBanco_socio" prefHeight="25.0" prefWidth="282.0" promptText="Banco" HBox.hgrow="ALWAYS" />
+                                                      <JFXComboBox fx:id="txtTipo_cuenta_banco_socio" prefHeight="25.0" prefWidth="171.0" promptText="Tipo de cuenta" />
+                                                      <TextField fx:id="txtNumero_cuenta_banco_socio" prefHeight="25.0" prefWidth="242.0" promptText="Numero de cuenta" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <HBox alignment="CENTER" prefHeight="12.0" prefWidth="767.0" spacing="10.0">
+                                             <children>
+                                                <JFXButton fx:id="btnAgregar_socio" alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: #FEC006;" text="Agregar" textFill="WHITE" textOverrun="CLIP">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </JFXButton>
+                                                <JFXButton fx:id="btnEliminar_socio" alignment="CENTER" contentDisplay="CENTER" disable="true" style="-fx-background-color: #e85656;" text="Eliminar" textFill="WHITE" textOverrun="CLIP">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor></JFXButton>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Label prefWidth="239.0" style="-fx-background-color: #E9E9E9;" text="Servicios POS" textFill="#004394f7">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Separator prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </Separator>
+                                          <VBox fx:id="vbPos" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                             <children>
+                                                <HBox fx:id="hbPos" prefHeight="17.0" prefWidth="767.0" spacing="10.0">
+                                                   <children>
+                                                      <JFXComboBox fx:id="txtServicio_pos" prefHeight="25.0" prefWidth="102.0" promptText="Servicio" />
+                                                      <TextField fx:id="txtUsuario_pos" prefHeight="25.0" prefWidth="130.0" promptText="Usuario" HBox.hgrow="ALWAYS" />
+                                                      <TextField fx:id="txtClave_pos" prefHeight="25.0" prefWidth="188.0" promptText="Clave" />
+                                                      <TextField fx:id="txtObservacion_pos" prefHeight="25.0" prefWidth="264.0" promptText="observacion" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <HBox alignment="CENTER" prefHeight="12.0" prefWidth="767.0" spacing="10.0">
+                                             <children>
+                                                <JFXButton fx:id="btnAgregar_pos" alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: #FEC006;" text="Agregar" textFill="WHITE" textOverrun="CLIP">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </JFXButton>
+                                                <JFXButton fx:id="txtEliminar_pos" alignment="CENTER" contentDisplay="CENTER" disable="true" style="-fx-background-color: #e85656;" text="Eliminar" textFill="WHITE" textOverrun="CLIP">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor></JFXButton>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Label prefHeight="26.0" prefWidth="239.0" style="-fx-background-color: #E9E9E9;" text="Clave previred y facturacion" textFill="#004394f7">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Separator prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </Separator>
+                                          <HBox prefHeight="17.0" prefWidth="767.0" spacing="10.0">
+                                             <children>
+                                                <TextField fx:id="txtUsuario_prev" prefHeight="25.0" prefWidth="186.0" promptText="Usuario Prev" HBox.hgrow="ALWAYS" />
+                                                <TextField fx:id="txtClave_prev" prefHeight="25.0" prefWidth="208.0" promptText="Clave Prev" />
+                                                <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="19.0">
+                                                   <HBox.margin>
+                                                      <Insets left="15.0" right="15.0" />
+                                                   </HBox.margin>
+                                                </Separator>
+                                                <TextField fx:id="txtClave_fact" prefHeight="25.0" prefWidth="202.0" promptText="Clave Facturacion" />
+                                                <TextField fx:id="txtFecha_fact" prefHeight="25.0" prefWidth="203.0" promptText="Fecha de compra" />
+                                                <TextField fx:id="txtDuracion_fact" prefHeight="25.0" prefWidth="192.0" promptText="Duracion" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </VBox>
+                     </center>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <top>
+                        <Label text="Formulario de ingreso de Cliente" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="22.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets top="15.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                  </BorderPane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: f6f8fd;" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </center>
+         <top>
+            <HBox prefHeight="43.0" prefWidth="1476.0" style="-fx-background-color: #011e5e;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" />
+               </BorderPane.margin>
+               <children>
+                  <JFXButton fx:id="btnVolver_Formulario" prefHeight="40.0" prefWidth="72.0">
+                     <graphic>
+                        <ImageView fx:id="btnVolver_formulario_image" fitHeight="32.0" fitWidth="36.0">
+                           <image>
+                              <Image url="@images/VOLVER.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets left="15.0" />
+               </padding></HBox>
+         </top>
+      </BorderPane>
+      <BorderPane fx:id="busClientes" prefHeight="200.0" prefWidth="1476.0" style="-fx-background-color: dfe4f0;" visible="false">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="1288.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="32.0" prefWidth="1456.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="32.0" prefWidth="539.0" spacing="10.0">
+                           <children>
+                               <ImageView fx:id="iconoBuscar" fitHeight="36.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                     <Image url="@images/BuscadorICON.png" />
+                                  </image>
+                                  <HBox.margin>
+                                     <Insets left="20.0" />
+                                  </HBox.margin>
+                               </ImageView>
+                               <!-- Reemplazo de TextField por JFXTextField -->
+<!--                                   █-->
+                               <JFXTextField fx:id="ltBuscador" prefWidth="338.0" promptText="Buscar" styleClass="search-field" HBox.hgrow="ALWAYS">
+                                  <HBox.margin>
+                                     <Insets />
+                                  </HBox.margin>
+                               </JFXTextField>
+<!--                                  █-->
+                            </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="56.0" prefWidth="907.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <JFXButton fx:id="btnFormCliente" alignment="TOP_RIGHT" style="-fx-background-color: #284eab;" text="Nuevo Cliente" textFill="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <ImageView fitHeight="48.0" fitWidth="50.0">
+                                       <image>
+                                          <Image url="@images/NuevoCliente.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+<!--                  █-->
+                <com.jfoenix.controls.JFXTreeTableView fx:id="ltClientes" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <com.jfoenix.controls.JFXTreeTableColumn fx:id="btnAbrir" prefWidth="50.0" text="" />
+                        <com.jfoenix.controls.JFXTreeTableColumn fx:id="ltID" prefWidth="50.0" text="ID" />
+                        <com.jfoenix.controls.JFXTreeTableColumn fx:id="ltNombre" prefWidth="700.0" text="Razón Social" />
+                        <com.jfoenix.controls.JFXTreeTableColumn fx:id="ltTipo" prefWidth="100.0" text="Tipo" />
+                        <com.jfoenix.controls.JFXTreeTableColumn fx:id="ltRut" prefWidth="150.0" text="RUT" />
+                        <com.jfoenix.controls.JFXTreeTableColumn fx:id="ltCalle" prefWidth="200.0" text="Calle" />
+                        <com.jfoenix.controls.JFXTreeTableColumn fx:id="ltLocal" prefWidth="75.0" text="Local" />
+                        <com.jfoenix.controls.JFXTreeTableColumn fx:id="ltRepSoc" prefWidth="300.0" text="Representante" />
+                    </columns>
+                </com.jfoenix.controls.JFXTreeTableView>
+<!--                █-->
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+         </center>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </BorderPane>
+   </children>
+</StackPane>

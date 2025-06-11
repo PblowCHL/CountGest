@@ -1,0 +1,27 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 17-12-2024, 2:52:04 p. m.
+    Author     : Contabilidad
+*/
+
+.md-button {
+    -fx-background-color: Transparent;    /* Azul Material 500 */
+    -fx-text-fill: #FFFFFF;           /* Texto blanco */
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;        /* Bordes redondeados */
+    -fx-padding: 0.5em 1em;          /* Relleno interno */
+    -fx-alignment: center_left;      /* Ícono y texto alineados */
+    -fx-cursor: hand;                /* Cambiar cursor */
+}
+
+.md-button:hover {
+    -fx-background-color: #baddff; /* Azul Material 700 */
+}
+
+.md-button:pressed {
+    -fx-background-color: #011e5e; /* Azul Material 800 */
+}
+

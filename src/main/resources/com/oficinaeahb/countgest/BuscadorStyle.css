@@ -1,0 +1,12 @@
+.material-search {
+   -fx-prompt-text-fill: #9E9E9E; /* Color gris claro */
+   -jfx-focus-color: #3F51B5; /* Color azul para el efecto Material Design */
+   -jfx-unfocus-color: #BDBDBD; /* Borde gris cuando no está enfocado */
+   -fx-background-color: transparent;
+   -fx-padding: 5 5 5 30; /* Espacio para el ícono */
+}
+
+.image-view {
+   -fx-opacity: 0.6; /* Ícono ligeramente apagado */
+   -fx-translate-y: 5px;
+}
